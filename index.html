@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Jogo da cobrinha</title>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
  
@@ -11,9 +12,9 @@
         window.onload = function(){
  
             var stage = document.getElementById('stage');
-            var ctx = stage.getContext("2d");
+            var ctx = stage.getContext("2d")
             document.addEventListener("keydown", keyPush);
-            setInterval(game, 60);
+            setInterval(game, 80);
  
             const vel = 1;
  
@@ -44,13 +45,13 @@
                     py = 0;
                 }
  
-                ctx.fillStyle = "black";
+                ctx.fillStyle = "gold";
                 ctx.fillRect(0,0, stage.width, stage.height);
  
                 ctx.fillStyle = "red";
                 ctx.fillRect(ax*tp, ay*tp, tp,tp);
  
-                ctx.fillStyle = "gray";
+                ctx.fillStyle = "black";
                 for (var i = 0; i < trail.length; i++) {
                     ctx.fillRect(trail[i].x*tp, trail[i].y*tp, tp-1,tp-1);
                     if (trail[i].x == px && trail[i].y == py)
